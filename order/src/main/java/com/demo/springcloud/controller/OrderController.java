@@ -17,7 +17,7 @@ public class OrderController {
 
     @GetMapping("/order/get/{id}")
     public BaseResp getId(@PathVariable("id") String id) {
-        return restTemplate.getForObject("http://localhost:8001/payment/get/" + id, BaseResp.class);
+        return restTemplate.getForObject("http://PAYMENT-SERVICE/payment/get/" + id, BaseResp.class);
     }
 
 
