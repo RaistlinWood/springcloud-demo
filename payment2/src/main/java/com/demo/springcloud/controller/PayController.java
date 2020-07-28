@@ -16,13 +16,13 @@ public class PayController {
     private PayService payService;
 
     @GetMapping(value = "/payment/get/{id}")
-    public BaseResp getId(@PathVariable("id") Long id) {
+    public BaseResp getId(@PathVariable("id") String id) {
         log.info("pay2 get start:{}", id);
         try {
             BaseResp<String> base = new BaseResp<>();
             base.setCode(200);
             base.setMessage("success");
-            base.setData(payService.getId(String.valueOf(id)));
+            base.setData(payService.getId(id));
             log.info("pay2 get end");
             return base;
         } catch (Exception e) {

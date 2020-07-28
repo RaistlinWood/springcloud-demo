@@ -1,6 +1,8 @@
 package com.demo.springcloud.controller;
 
 import com.demo.springcloud.base.BaseResp;
+import com.demo.springcloud.service.PaymentService;
+import com.netflix.loadbalancer.RoundRobinRule;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +15,11 @@ import org.springframework.web.client.RestTemplate;
 public class OrderController {
 
     @Autowired
-    private RestTemplate restTemplate;
+    private PaymentService paymentService;
 
     @GetMapping("/order/get/{id}")
     public BaseResp getId(@PathVariable("id") String id) {
-        return restTemplate.getForObject("http://PAYMENT-SERVICE/payment/get/" + id, BaseResp.class);
+        return paymentService.getId(id);
     }
 
 
