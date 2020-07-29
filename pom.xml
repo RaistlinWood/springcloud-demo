@@ -110,6 +110,12 @@
         <version>${lombok.verion}</version>
         <optional>true</optional>
       </dependency>
+
+      <dependency>
+        <groupId>com.demo.springcloud</groupId>
+        <artifactId>common</artifactId>
+        <version>${project.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 

@@ -25,7 +25,6 @@
         <dependency>
             <groupId>com.demo.springcloud</groupId>
             <artifactId>common</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
